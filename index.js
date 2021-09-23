@@ -1,9 +1,11 @@
 let express = require("express");
 let socket = require("socket.io");
+var cors = require("cors");
 ////App setup
 
 let app = express();
-let port = process.env.PORT || 4000;
+app.use(cors());
+let port = 4000;
 
 let server = app.listen(port, function () {
   console.log("Listening to request on port 4000");
